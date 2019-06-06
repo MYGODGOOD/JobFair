@@ -17,25 +17,21 @@ import java.util.Date;
  * @author Feri
  * @since 2019-06-06
  */
-@TableName("user")
+@TableName("job")
 @Data
-public class User extends Model<User> {
+public class Job extends Model<Job> {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "uid", type = IdType.AUTO)
+    @TableId(value = "jid", type = IdType.AUTO)
+    private Integer jid;
+    private String jname;
+    private Integer eid;
+    private Date pubDate;
     private Integer uid;
-    private String username;
-    private String password;
-    private Date birth;
-    private String education;
-    private String school;
-    private String major;
-    @TableField("work_year")
-    private Integer workYear;
-    private String phone;
-    private String email;
-    private String home;
+    private String hangye;
+    @TableField("work_place")
+    private String workPlace;
 
 
 
