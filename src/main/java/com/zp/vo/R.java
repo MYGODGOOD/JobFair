@@ -8,8 +8,11 @@ import lombok.Data;
  */
 @Data
 public class R {
+
     private int code;
+    //返回信息
     private String msg;
+
     private Object data;
 
     public static R setOK(){

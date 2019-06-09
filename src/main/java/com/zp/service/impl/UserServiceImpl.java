@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zp.dao.UserMapper;
 import com.zp.entity.User;
 import com.zp.service.UserService;
+import com.zp.vo.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,5 +19,51 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+    @Autowired
+    private UserMapper userMapper;
 
+
+    @Override
+    public Result register(User user) {
+        Result result = new Result();
+        result.setSuccess(false);
+        result.setDetail(null);
+        try {
+            User existUser = userMapper.findUserByName(user.getUsername());
+            if (existUser != null){
+                result.setMsg("用户名已存在");
+            }else {
+                userMapper.register(user);
+                result.setMsg("注册成功");
+                result.setSuccess(true);
+                result.setDetail(user);
+            }
+        }catch (Exception e){
+            result.setMsg(e.getMessage());
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    @Override
+    public Result login(User user) {
+        Result result = new Result();
+        result.setSuccess(false);
+        result.setDetail(null);
+        try {
+            Integer userUid = userMapper.login(user);
+            if (userUid == null){
+                result.setMsg("用户名或密码错误");
+            }else {
+                result.setMsg("登录成功");
+                result.setSuccess(true);
+                user.setUid(userUid);
+                result.setDetail(user);
+            }
+        }catch (Exception e){
+            result.setMsg(e.getMessage());
+            e.printStackTrace();
+        }
+        return result;
+    }
 }
