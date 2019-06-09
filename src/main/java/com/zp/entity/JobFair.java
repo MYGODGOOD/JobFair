@@ -23,11 +23,10 @@ public class JobFair extends Model<JobFair> {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "mid", type = IdType.AUTO)
-    private Integer mid;
-    private String city;
-    private Date time;
-    private String school;
-
+    private Integer mid;  //招聘会表
+    private String city;  //地区
+    private Date time;    //招聘会日期
+    private String school;  //学校
 
 
 }

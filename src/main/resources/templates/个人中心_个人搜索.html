@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>我的虚拟世界店铺</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="format-detection" content="telephone=no">
+        <meta http-equiv="Expires" content="-1">           
+        <meta http-equiv="Cache-Control" content="no-cache">           
+        <meta http-equiv="Pragma" content="no-cache">
+        <link rel="stylesheet" type="text/css" href="../css/css_whir.css">   
+         <script src="../js/jquery-1.4.2.min.js"></script>
+</head>
+<body><header class="Wrap_Top">
+<div class="logo"><a  href="index.html"></a></div>
+<span class="outside"><a href="登录.html">登录</a></span>
+<span class="inside" style="display:none;"><a href="#" class="username">用户名</a><a href="#">退出</a></span>
+</header>
+<!--/*顶部导航*/--><section class="green_Menu t">
+    <nav>
+    <li><a class="a1" href="index.html">首 页</a></li>
+    <li><a class="a2" href="找全职.html">找全职</a></li>
+    <li class="end"><a class="a3" href="找实习.html">找实习</a></li>
+    </nav>
+    <div class="clear"></div>
+    </section>
+    <!--/*搜索*/-->
+<section class="search">
+<input type="text" class="text" value="输入关键字搜索" onblur="if(this.value=='')this.value='输入关键字搜索';" onfocus="this.value='';" /><input type="button" class="btn" value=" " />
+</section>
+<!--/*搜索 end*/--><!--/*顶部导航 end*/-->
+<section class="Column_name"><a  href="javascript:history.go(-1);"></a>个人搜索</section>
+<!--/*列表*/-->
+<section class="search_term">
+   <article>
+<ul class="term_ul">
+<li><span>互联网/电子商务</span>行&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：
+<div class="hide_term">
+<a href="javascript:void(0);">酒店管理</a><a href="javascript:void(0);">计算机行业</a><a href="javascript:void(0);">饮食行业</a><a href="javascript:void(0);">服装行业</a><a href="javascript:void(0);">机械行业</a><a href="javascript:void(0);">金融行业</a><a href="javascript:void(0);">移动互联网行业</a>
+<div class="clear"></div>
+</div>
+</li>
+<li><span>平面设计师</span>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;能：
+<div class="hide_term">
+<a href="javascript:void(0);">市场推广</a>
+<a href="javascript:void(0);">业务员</a>
+<a href="javascript:void(0);">投资经理</a>
+<a href="javascript:void(0);">市场推广</a>
+<a href="javascript:void(0);">业务员</a>
+<div class="clear"></div>
+</div>
+</li>
+<li><span>近一周</span>发布日期：
+<div class="hide_term">
+<a href="javascript:void(0);">近三周</a>
+<a href="javascript:void(0);">近一月</a>
+<a href="javascript:void(0);">3个月以上</a>
+<div class="clear"></div>
+</div>
+</li>
+<li class="end"><span>广州白云区</span>工作地点：
+<div class="hide_term">
+<a href="javascript:void(0);">广州天河区</a>
+<a href="javascript:void(0);">广州越秀区</a>
+<a href="javascript:void(0);">深圳福田区</a>
+<div class="clear"></div>
+</div>
+</li>
+</ul> 
+<script type="text/javascript">
+	jQuery(".term_ul li span").bind("click",function(){
+		jQuery(this).next(".hide_term").show();
+	})
+	jQuery(".term_ul li").bind("mouseleave",function(){
+		jQuery(this).find(".hide_term").hide();
+	})	
+		//
+	    $(".term_ul li .hide_term a").bind("click", function () {
+        var DownText = $(this).text();
+        $(this).parent().prev("span").text(DownText);
+		$(this).parent().hide();
+    })
+</script>
+<div class="btn_box_xp"><dl><dd><a class="btn" href="#">找全职</a></dd></dl><dl><dd><a class="btn" href="#">找实习</a></dd></dl></div>
+   </article>
+</section>   
+<section class="search_records">
+<h1>近期搜索记录：</h1>
+<ul>
+<li><a href="#">约1250个职位</a><span>“网页设计师”+广州+近一周</span></li>
+<li><a href="#">约1250个职位</a><span>“平面设计师”+深圳+近一个月</span></li>
+</ul>
+</section>
+<!--/*列表 end*/-->
+<!--/*底部导航*/-->
+    <section class="green_Menu b">
+    <nav>
+    <li><a class="a4" href="个人中心.html">个人中心</a></li>
+    <li><a class="a5" href="校企风采.html">校企风采</a></li>
+    <li><a class="a6" href="宣聘会.html">宣聘会</a></li>
+    <li class="end"><a class="a7" href="优才行.html">优才行</a></li>
+    </nav>
+    <div class="clear"></div>
+    </section><!--/*底部导航 end*/-->
+ <script type="text/javascript">jQuery(".b li").eq(0).attr("id","on");</script>
+</body>
+</html>

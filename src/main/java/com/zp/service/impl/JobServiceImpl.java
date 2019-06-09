@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zp.dao.JobMapper;
 import com.zp.entity.Job;
 import com.zp.service.JobService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,5 +18,16 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements JobService {
+
+    @Autowired
+    private  JobMapper jobDao;
+
+   /* @Override
+    public List<Job> search(String jname) {
+        jname = "%" + jname + "%";
+        List<Job> list = jobdao.search(jname);
+
+        return list;
+    }*/
 
 }

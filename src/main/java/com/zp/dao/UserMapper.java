@@ -1,6 +1,7 @@
 package com.zp.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.zp.entity.User;
 
 
 /**
