@@ -17,4 +17,19 @@
         <result column="home" property="home" />
     </resultMap>
 
+   <!-- <insert id="register" parameterType="user">
+		insert into user(username,password,email)
+		values (#{username},#{password},#{email})
+	</insert>
+
+    <select id="findUserByName" parameterType="string" resultType="user">
+		select username,password from user where username=#{username}
+	</select>
+
+    <select id="login" parameterType="int" resultType="user">
+		select uid from user where username=#{username} and password=#{password}
+	</select>
+-->
+
+
 </mapper>

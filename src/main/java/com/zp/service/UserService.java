@@ -1,6 +1,9 @@
 package com.zp.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zp.entity.User;
+import com.zp.vo.Result;
+import org.springframework.stereotype.Service;
 
 
 /**
@@ -11,6 +14,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author Feri
  * @since 2019-06-06
  */
+@Service
+
 public interface UserService extends IService<User> {
+
+     Result register(User user);
+
+
+
+
+     Result login(User user);
 
 }
