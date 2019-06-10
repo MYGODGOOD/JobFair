@@ -1,6 +1,7 @@
 package com.zp.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zp.entity.User;
 
 
 /**
