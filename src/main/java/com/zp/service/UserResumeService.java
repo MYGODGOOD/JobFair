@@ -14,4 +14,5 @@ import com.zp.entity.UserResume;
  */
 public interface UserResumeService extends IService<UserResume> {
 
+
 }

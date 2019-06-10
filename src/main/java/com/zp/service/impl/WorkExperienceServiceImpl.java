@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zp.dao.WorkExperienceMapper;
 import com.zp.entity.WorkExperience;
 import com.zp.service.WorkExperienceService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,5 +18,6 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class WorkExperienceServiceImpl extends ServiceImpl<WorkExperienceMapper, WorkExperience> implements WorkExperienceService {
-
+    @Autowired
+    private WorkExperienceMapper workExperienceMapper;
 }

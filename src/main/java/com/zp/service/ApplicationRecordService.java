@@ -2,6 +2,7 @@ package com.zp.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zp.entity.ApplicationRecord;
+import com.zp.vo.R;
 
 
 /**
@@ -13,5 +14,5 @@ import com.zp.entity.ApplicationRecord;
  * @since 2019-06-06
  */
 public interface ApplicationRecordService extends IService<ApplicationRecord> {
-
+    public R getApplicationRecord(Integer uid);
 }

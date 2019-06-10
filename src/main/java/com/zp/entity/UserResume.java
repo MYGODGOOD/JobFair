@@ -22,10 +22,8 @@ public class UserResume extends Model<UserResume> {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "uid", type = IdType.AUTO)
-    private Integer uid;
-    @TableField("work_experience")
-    private String workExperience;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
     @TableField("edu_experience")
     private String eduExperience;
     @TableField("job_intention")
@@ -33,7 +31,7 @@ public class UserResume extends Model<UserResume> {
     @TableField("train_experience")
     private String trainExperience;
     private String language;
-
+    private Integer uid;
 
 
 }

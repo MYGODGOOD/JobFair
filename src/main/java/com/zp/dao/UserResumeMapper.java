@@ -16,4 +16,10 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserResumeMapper extends BaseMapper<UserResume> {
 
+    /**
+     * 修改简历
+     * @param userResume
+     */
+    public void updateResume(UserResume userResume);
+
 }
