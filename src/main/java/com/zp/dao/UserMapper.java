@@ -31,6 +31,22 @@ public interface UserMapper extends BaseMapper<User> {
     @Select("select uid from user  where username = #{username} and password = #{password}")
     Integer login(User user);
 
+    @Insert("insert into user email values #{email}")
+    void addEmail(User user);
+
+    @Select("select * from user where password=#{password} and username=#{username}")
+    User selectByPassword(String password,String username);
+
+
+    @Update("Update user set password=#{password} where uid=#{uid}")
+    int updateByPrimaryKeySelective(User record);
+
+    @Select("select * from user where uid=#{uid}")
+    User findUserByUid(Integer uid);
+
+
+
+
 
 
 }

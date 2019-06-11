@@ -2,8 +2,11 @@ package com.zp.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zp.entity.User;
+import com.zp.vo.R;
 import com.zp.vo.Result;
 import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpSession;
 
 
 /**
@@ -20,9 +23,12 @@ public interface UserService extends IService<User> {
 
      Result register(User user);
 
-
-
-
      Result login(User user);
+
+     R addEmail(User user);
+
+     Object updatePassword(String password, String newPassword, String username, HttpSession session);
+
+     User findUserByUid(Integer uid);
 
 }

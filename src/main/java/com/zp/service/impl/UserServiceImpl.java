@@ -5,9 +5,14 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zp.dao.UserMapper;
 import com.zp.entity.User;
 import com.zp.service.UserService;
+import com.zp.vo.R;
 import com.zp.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <p>
@@ -66,4 +71,39 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         }
         return result;
     }
+
+    @Override
+    public R addEmail(User user) {
+        return R.setOK();
+    }
+
+    @Override
+    public Object updatePassword(String password, String newPassword, String username, HttpSession session) {
+        Map<String,Object> map = new HashMap<String, Object>();
+
+        if (password != null){
+            User user = userMapper.selectByPassword(password, username);
+            Integer uid = user.getUid();
+            String userPassword = user.getPassword();
+
+            if (userPassword.equals(password)){
+                User u = new User();
+                u.setUid(uid);
+                u.setPassword(newPassword);
+                return userMapper.updateByPrimaryKeySelective(u);
+            }
+        }
+
+        return 0;
+    }
+
+
+
+
+    @Override
+    public User findUserByUid(Integer uid) {
+        return userMapper.findUserByUid(uid);
+    }
+
+
 }
