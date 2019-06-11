@@ -19,6 +19,6 @@ public class ExceptionControllerAdvice {
     @ResponseBody
     @ExceptionHandler(value = Exception.class)
     public R errorHandler(Exception ex){
-        return R.setERROR();
+        return R.setERROR(ex);
     }
 }

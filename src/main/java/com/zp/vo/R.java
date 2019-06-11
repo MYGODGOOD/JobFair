@@ -29,11 +29,11 @@ public class R {
         r.setData(data);
         return r;
     }
-    public static R setERROR(){
+    public static R setERROR(Exception ex){
         R r=new R();
         r.setCode(1000);
         r.setMsg("ERROR");
-        r.setData(null);
+        r.setData(ex.getMessage());
         return r;
     }
 
