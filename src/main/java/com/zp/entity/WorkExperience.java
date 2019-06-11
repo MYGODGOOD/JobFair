@@ -23,8 +23,8 @@ public class WorkExperience extends Model<WorkExperience> {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "uid", type = IdType.AUTO)
-    private Integer uid;
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
     @TableField("company_name")
     private String companyName;
     private String career;
@@ -33,7 +33,5 @@ public class WorkExperience extends Model<WorkExperience> {
     private Date wordTime;
     private String salarybeforetax;
     private String description;
-
-
-
+    private Integer uid;
 }

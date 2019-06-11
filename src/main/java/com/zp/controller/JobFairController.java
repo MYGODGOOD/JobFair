@@ -2,6 +2,7 @@ package com.zp.controller;
 
 
 import com.zp.service.JobFairService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/jobFair")
 public class JobFairController {
 
+    @Autowired
     private JobFairService jobFairService;
 
 }

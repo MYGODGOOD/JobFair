@@ -24,14 +24,15 @@ public class Job extends Model<Job> {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "jid", type = IdType.AUTO)
-    private Integer jid;
-    private String jname;
-    private Integer eid;
-    private Date pubDate;
-    private Integer uid;
-    private String hangye;
+    private Integer jid;    //职位id
+    private String jname;   //职位名称
+    private Integer eid;    //企业id
+    private Date pubDate;    //发布日期
+    private Integer uid;     //应聘id
+    private String hangye;   //行业
     @TableField("work_place")
-    private String workPlace;
+    private String workPlace;  //工作地点
+    private String type; //类别
 
 
 

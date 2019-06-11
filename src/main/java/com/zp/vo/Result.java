@@ -18,7 +18,4 @@ public class Result<T> {
     private T detail;
 
 
-
-
-
 }

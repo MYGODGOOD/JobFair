@@ -11,4 +11,17 @@
         <result column="eid" property="eid" />
     </resultMap>
 
+
+    <select id="findUserLetters" parameterType="map" resultMap="BaseResultMap">
+        select * from letter
+        <where>
+            <if test="uid!=null">
+                uid = #{uid}
+            </if>
+            <if test="key!=null">
+                and companyname like #{key}
+            </if>
+        </where>
+    </select>
+
 </mapper>
