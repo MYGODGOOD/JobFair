@@ -14,5 +14,5 @@ import com.zp.vo.R;
  * @since 2019-06-06
  */
 public interface ApplicationRecordService extends IService<ApplicationRecord> {
-    public R getApplicationRecord(Integer uid);
+    public R getApplicationRecord(Integer pageNum,Integer pageSize,Integer uid,Integer type);
 }

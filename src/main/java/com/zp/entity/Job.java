@@ -32,6 +32,7 @@ public class Job extends Model<Job> {
     private String hangye;   //行业
     @TableField("work_place")
     private String workPlace;  //工作地点
+    private String type; //类别
 
 
 

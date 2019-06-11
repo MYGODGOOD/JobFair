@@ -27,7 +27,7 @@ public class WorkExperienceController {
     private WorkExperienceService workExperienceService;
 
     @ApiOperation("获得用户的所有工作经验")
-    @GetMapping("/uworkex?{uid}")
+    @GetMapping("/uworkex/{uid}")
     public R getUserWorkExperience(@PathVariable("uid") Integer uid){
         Map<String, Object> map = new HashMap<>();
         map.put("uid",uid);
@@ -43,7 +43,7 @@ public class WorkExperienceController {
     }
 
     @ApiOperation("修改工作经验,通过工作经验id")
-    @PutMapping("/uworkex")
+    @PatchMapping("/uworkex")
     public R updateWorkExpersion(WorkExperience workExperience){
         boolean update = workExperienceService.updateById(workExperience);
         return R.setOK("",update);

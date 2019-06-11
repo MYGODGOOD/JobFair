@@ -2,6 +2,7 @@ package com.zp.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zp.entity.Letter;
+import com.zp.vo.R;
 
 
 /**
@@ -14,4 +15,5 @@ import com.zp.entity.Letter;
  */
 public interface LetterService extends IService<Letter> {
 
+    public R getUserLetters(Integer pageNum,Integer pageSize,Integer uid, String key);
 }

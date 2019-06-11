@@ -25,6 +25,7 @@ public class ApplicationRecord extends Model<ApplicationRecord> {
     private Integer id;
     private Integer uid;
     private Integer jid;
+    private Integer type;
 
 
 
