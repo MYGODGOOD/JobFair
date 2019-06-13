@@ -10,4 +10,21 @@
         <result column="school" property="school" />
     </resultMap>
 
+    <select id="search" parameterType="map" resultType="com.zp.entity.JobFair">
+            select * from job_fair
+        <where>
+            <if test="city != null">
+                city like #{city}
+            </if>
+
+            <if test="time != null">
+               and time like #{time}
+            </if>
+            <if test="school != null">
+               and school like #{school}
+            </if>
+        </where>
+
+    </select>
+
 </mapper>

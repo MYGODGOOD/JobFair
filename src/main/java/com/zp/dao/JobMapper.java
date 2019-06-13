@@ -18,4 +18,5 @@ import java.util.List;
 @Mapper
 public interface JobMapper extends BaseMapper<Job> {
 
+    public List<Job> search(String name);
 }

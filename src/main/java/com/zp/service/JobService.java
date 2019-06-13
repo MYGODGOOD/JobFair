@@ -17,5 +17,6 @@ import java.util.Map;
  */
 public interface JobService extends IService<Job> {
 
+   /* public List<Job> search(String name);*/
 
 }

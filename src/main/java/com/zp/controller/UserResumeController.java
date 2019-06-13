@@ -1,6 +1,4 @@
 package com.zp.controller;
-
-
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.zp.entity.UserResume;
 import com.zp.service.UserResumeService;
@@ -40,7 +38,6 @@ public class UserResumeController {
                 .eq("uid",uid));
         return R.setOK("",update);
     }
-
 
 }
 

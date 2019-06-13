@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Api(value="搜索工作",tags = "搜索工作")
 @RestController
-@RequestMapping("/job")
+@RequestMapping("/search/job")
 public class JobController {
 
     @Autowired
@@ -28,15 +28,18 @@ public class JobController {
 
     @ApiOperation(value = "搜索所有工作",notes = "搜索所有工作")
     @GetMapping("/job.do")
-    @CrossOrigin
+    @CrossOrigin     //解决跨域
     public R query(String jname){
-        return R.setOK("ok",jobService.getOne(new QueryWrapper().lambda()));
 
+            Job jname1 = jobService.getOne(new QueryWrapper<Job>().like("jname", jname));
+
+        return R.setOK("ok",null);
     }
 
     @ApiOperation(value = "增加工作",notes = "增加工作")
-    @PostMapping("/job/save.do")
+    @PostMapping("/add/save.do")
     public R  add(@RequestBody Job job){
+
         return R.setOK("ok",jobService.save(job));
     }
 

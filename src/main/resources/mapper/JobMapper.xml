@@ -7,10 +7,14 @@
         <id column="jid" property="jid" />
         <result column="jname" property="jname" />
         <result column="eid" property="eid" />
-        <result column="pubDate" property="pubDate" />
+        <result column="pub_date" property="pub_date" />
         <result column="uid" property="uid" />
         <result column="hangye" property="hangye" />
         <result column="work_place" property="workPlace" />
     </resultMap>
 
+
+    <select id="search" parameterType="string" resultType="com.zp.entity.Job">
+        select jid，jname，eid，pub_date，uid，hangye，work_place ,type from job where jname like #{jname}
+    </select>
 </mapper>
