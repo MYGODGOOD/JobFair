@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;;
  * @author Feri
  * @since 2019-06-06
  */
-@Repository
+
 public interface LetterMapper extends BaseMapper<Letter> {
 
    R findLetterById(int id);

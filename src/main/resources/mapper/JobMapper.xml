@@ -15,13 +15,11 @@
 
     <select id="findFulltimeJob" resultType="com.zp.entity.Job">
         select * from job where hangye=#{hangye} and jname=#{jname}
-        and (current_date - 7 and sysdate()) and workPlace=#{workPlace}
-        and type=0
+        and pubDate=#{pubDate} and work_place=#{workPlace}
     </select>
     <select id="findParttimeJob" resultType="com.zp.entity.Job">
         select * from job where hangye=#{hangye} and jname=#{jname}
-        and (current_date - 7 and sysdate()) and workPlace=#{workPlace}
-        and type=1
+        and pubDate=#{pubDate} and work_place=#{workPlace}
     </select>
 
 </mapper>

@@ -17,9 +17,7 @@ import org.springframework.stereotype.Repository;;import java.util.Date;
 @Repository
 public interface JobMapper extends BaseMapper<Job> {
 
-    R findFulltimeJob(@Param("hangye") String hangye, @Param("jname") String jname,
-                      @Param("pubDate") Date pubDate, @Param("workPlace") String workPlace);
-    R findParttimeJob(@Param("hangye") String hangye, @Param("jname") String jname,
-                      @Param("pubDate") Date pubDate, @Param("workPlace") String workPlace);
+    R findFulltimeJob(String hangye, String jname, Date pubDate, String workPlace);
+    R findParttimeJob(String hangye, String jname, Date pubDate, String workPlace);
 
 }

@@ -10,6 +10,7 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  *@Author feri
@@ -17,7 +18,7 @@ import springfox.documentation.spring.web.plugins.Docket;
  * Swagger设置
  */
 @Configuration //标记这是一个配置
-@ComponentScan(basePackages = {"com.zp.controller"})
+@EnableSwagger2
 public class SwaggerConfig {
 
     public ApiInfo createA(){
@@ -28,7 +29,7 @@ public class SwaggerConfig {
     @Bean//创建对象  修饰方法 方法的返回值必须是引用类型  对象存储在IOC容器
     public Docket createDocket(){
        Docket docket=new Docket(DocumentationType.SWAGGER_2).apiInfo(createA()).select().
-               apis(RequestHandlerSelectors.withClassAnnotation(ApiOperation.class)).build();
+               apis(RequestHandlerSelectors.basePackage("com.zp.controller")).build();
        return docket;
 
     }

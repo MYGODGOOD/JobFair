@@ -25,16 +25,16 @@ public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements JobSe
     private JobMapper jobMapper;
 
     @Override
-    public R findfindFulltimeJobByCondition(String hangye, String jname, Date pubDate, String workPlace) {
+    public R findFulltimeJobByCondition(String hangye, String jname, Date pubDate, String workPlace) {
 
         return R.setOK(null,jobMapper.findFulltimeJob(hangye,jname,pubDate,workPlace));
 
     }
 
     @Override
-    public R findfindParttimeJobByCondition(String hangye, String jname, Date pubDate, String workPlace) {
+    public R findParttimeJobByCondition(String hangye, String jname, Date pubDate, String workPlace) {
 
-        return R.setOK(null,jobMapper.findParttimeJob(hangye,jname,pubDate,workPlace));
+        return R.setOK("找实习",jobMapper.findParttimeJob(hangye,jname,pubDate,workPlace));
 
     }
 }

@@ -15,9 +15,9 @@ import org.apache.ibatis.annotations.Param;;import java.util.Date;
  */
 public interface JobService extends IService<Job> {
 
-    R findfindFulltimeJobByCondition(String hangye, String jname, Date pubDate, String workPlace);
+    R findFulltimeJobByCondition(String hangye, String jname, Date pubDate, String workPlace);
 
-    R findfindParttimeJobByCondition(String hangye, String jname, Date pubDate, String workPlace);
+    R findParttimeJobByCondition(String hangye, String jname, Date pubDate, String workPlace);
 
 
 }
